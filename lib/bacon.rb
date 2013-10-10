@@ -1,5 +1,5 @@
 require "bacon/version"
 
 module Bacon
-  # Your code goes here...
+  # Your bacon goes here...
 end
