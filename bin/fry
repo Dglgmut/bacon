@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'bacon'
+Bacon::Fryer.do_eet

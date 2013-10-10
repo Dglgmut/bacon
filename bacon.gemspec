@@ -22,5 +22,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
   spec.add_development_dependency "nokogiri"
   spec.add_development_dependency "httparty"
-  spec.add_development_dependency "reel"
+  spec.add_development_dependency "em-websocket"
 end
