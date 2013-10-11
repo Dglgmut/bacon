@@ -3,7 +3,7 @@ require 'em-websocket'
 module Bacon
   class Fryer
     def self.log(text)
-      Bacon::DB.execute "INSERT INTO Bacon (object) VALUES('fryer_log: #{text}')"
+      Bacon::DB.execute "INSERT INTO Bacon (object) VALUES('fryer_log@#{Time.now}: #{text}')"
       puts text
     end
 
@@ -17,12 +17,12 @@ module Bacon
       Fryer.log 'Booting up bacon server'
       EM::WebSocket.run(:host => "localhost", :port => 8080) do |ws|
         ws.onopen { |handshake|
-          puts "Someone wants crispy bacon"
+          Fryer.log "Someone wants crispy bacon"
           ws.send "Welcome, Bacon Lover!"
         }
 
         ws.onmessage { |msg|
-          puts "Recieved message: #{msg}"
+          Fryer.log "Recieved message: #{msg}"
         }
       end
     end
