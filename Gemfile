@@ -5,3 +5,4 @@ gemspec
 gem "rubysl"
 gem "rspec"
 gem "json"
+gem "sqlite3"
