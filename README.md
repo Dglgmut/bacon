@@ -20,6 +20,12 @@ Or install it yourself as:
 
 TODO: Write usage instructions here
 
+## Roadmap
+
+1. Ability to run procedures through websocket.
+2. Integration with Asana tasks (login, task creation)
+3. Integration with github (connect asana task to issues/pullrequests)
+
 ## Contributing
 
 1. Fork it
