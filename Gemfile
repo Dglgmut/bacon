@@ -4,3 +4,4 @@ source 'https://rubygems.org'
 gemspec
 gem "rubysl"
 gem "rspec"
+gem "json"
