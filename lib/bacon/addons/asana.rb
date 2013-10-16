@@ -13,10 +13,9 @@ module Bacon
 
 protected
 
-      #the standard for recording a asana object is: asana_*keyName*
       def find_or_create_by_api_key_and_workspace_id(api_key)
-        stm = Bacon::DB.prepare "SELECT `object` FROM Bacon 
-                                 WHERE`object` LIKE 'asana_%'"
+        stm = Bacon::DB.prepare "SELECT `asana_key` FROM User 
+                                 WHERE`asana_key` = '#{api_key}'"
 
         rs = stm.execute
         if rs.any?
@@ -27,7 +26,7 @@ protected
           end
           @api_key = rs_hash[:api_key]
         else
-          Bacon::DB.execute "INSERT INTO Bacon (object) VALUES('asana_api_key:#{api_key}')"
+          Bacon::DB.execute "INSERT INTO User (asana_key) VALUES('#{api_key}')"
         end
       end
     end
