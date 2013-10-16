@@ -48,7 +48,7 @@ protected
       end
 
       def find_by_api_key(api_key)
-        query = Bacon::DB.prepare("SELECT `asana_key` FROM User
+        query = Bacon::DB.prepare("SELECT `asana_key` FROM users
                                    WHERE `asana_key` = '#{api_key}'")
         results = query.execute![0]
         if results
@@ -60,7 +60,7 @@ protected
       end
 
       def create_by_api_key(api_key)
-        Bacon::DB.execute "INSERT INTO User (asana_key) VALUES('#{api_key}')"
+        Bacon::DB.execute "INSERT INTO users (asana_key) VALUES('#{api_key}')"
         get_user_info
       end
     end
