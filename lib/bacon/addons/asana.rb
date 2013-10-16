@@ -20,8 +20,9 @@ protected
       def find_by_api_key(api_key)
         query = Bacon::DB.prepare("SELECT `asana_key` FROM User
                                    WHERE `asana_key` = '#{api_key}'")
-        results = query.execute!
-        if @api_key = results[0][0]
+        results = query.execute![0]
+        if results
+          @api_key = results.first
           self
         else
           false
