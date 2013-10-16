@@ -9,5 +9,5 @@ module Bacon
   ENV['name'] = 'test'
   DB = SQLite3::Database.open "#{ENV['name']}_bacon.sqlite"
   DB.execute "CREATE TABLE IF NOT EXISTS Bacon(Id INTEGER PRIMARY KEY, Object TEXT)"
-  DB.execute "CREATE TABLE IF NOT EXISTS User(Id INTEGER PRIMARY KEY, name STRING, asana_key STRING)"
+  DB.execute "CREATE TABLE IF NOT EXISTS User(Id INTEGER PRIMARY KEY, asana_key STRING)"
 end
