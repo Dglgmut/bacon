@@ -6,8 +6,7 @@ require "sqlite3"
 module Bacon
   # Your bacon goes here...
 
-  #Creates a table with a single column which is serialized as whatever
-  #anyone wants
+  ENV['name'] = 'test'
   DB = SQLite3::Database.open "#{ENV['name']}_bacon.sqlite"
   DB.execute "CREATE TABLE IF NOT EXISTS Bacon(Id INTEGER PRIMARY KEY, Object TEXT)"
   DB.execute "CREATE TABLE IF NOT EXISTS User(Id INTEGER PRIMARY KEY, name STRING, asana_key STRING)"
